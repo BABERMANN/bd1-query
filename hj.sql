@@ -99,4 +99,22 @@ update medico set especialidade = 'fisioterapeuta'
 
 select * from medico;
 
+update medico set especialidade = 'Fudido'
+	where nome = 'Apolo'
+	or nome = 'caneta azul';
+
+
+--atualizar dados de consulta
+
+update consulta set date = '2005-01-01'
+	where num = 1;
+
+update consulta set date = '2022-03-02'
+	where date = null;
+
+update consulta set tipo = 'c'
+	where tipo = null;
+
+
+
 
