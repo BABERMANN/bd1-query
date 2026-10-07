@@ -106,15 +106,50 @@ update medico set especialidade = 'Fudido'
 
 --atualizar dados de consulta
 
+select * from consulta;
+
+delete from consulta
+	where id_paciente = 1;
+
 update consulta set date = '2005-01-01'
 	where num = 1;
 
 update consulta set date = '2022-03-02'
-	where date = null;
+	where date is null;
 
 update consulta set tipo = 'c'
-	where tipo = null;
+	where tipo is null;
+
+update consulta set valor = valor*1.1
+	where valor > 120;
+
+update consulta set tipo = 'c', valor = null
+	where valor >=165;
 
 
+--remover o paciente chamado eredin
+
+select * from paciente;
+
+delete from paciente
+	where nome = 'eredin';
+
+--tranformar uma fk em modo cascade
+alter table paciente drop constraint paciente_conv_fk;
+
+alter table paciente add constraint paciente_conv_fk
+	foreign key(id_convenio) references convenio(id)
+	on delete cascade;
 
 
+-- 2. Transformar a FK de paciente na tabela CONSULTA em CASCADE
+alter table consulta drop constraint cons_pac_fk;
+
+-- Corrigido: Removido o ';' do meio da instrução anterior
+alter table consulta add constraint cons_pac_fk
+	foreign key(id_paciente) references paciente(id)
+	on delete cascade;
+
+-- Verificar se o paciente e as consultas dele sumiram
+select * from paciente;
+select * from consulta;
