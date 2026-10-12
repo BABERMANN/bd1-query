@@ -153,3 +153,4 @@ alter table consulta add constraint cons_pac_fk
 -- Verificar se o paciente e as consultas dele sumiram
 select * from paciente;
 select * from consulta;
+select * from medico;
