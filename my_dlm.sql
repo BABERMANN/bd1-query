@@ -46,6 +46,8 @@ create table consulta(
   constraint constraint_med_fk foreign key(id_medico) references medico(id)
 );
 
+alter table consulta drop constraint tipo_ck;
+
 
 select * from convenio;
 select * from paciente;
