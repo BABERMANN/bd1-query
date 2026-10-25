@@ -114,6 +114,7 @@ alter table pedido add constraint pedido_id_cliente_fk
   on delete set null;
 
 delete from cliente where id = 2;
+alter table item_pedido drop constraint item_pedido_id_pedido_fk;
 
 select * from pedido;
 select * from produto;
