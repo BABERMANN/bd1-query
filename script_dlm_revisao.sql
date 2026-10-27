@@ -114,8 +114,12 @@ drop table departamente cascade;
 --apagar database
 drop database --aula;
 
+--selec diferenciado	
+select ano_ingresso, semestre_ingresso, count(*) as qtd  
+	from aluno
+where ano_ingresso >= 2021
+group by ano_ingresso, semestre_ingresso
+having count(*) > 2
+order by 1, 2;
+	
 
-	 
-
-
-)
