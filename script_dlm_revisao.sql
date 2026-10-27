@@ -128,3 +128,16 @@ select aluno.nome as nome_aluno, curso.nome as nome_curso
 select d.nome as nome_depto , p.nome nome_prof
 	from departamento d inner join professor p on d.id_prof_responsavel = p.id;
 
+-- outer join
+--left
+select d.nome as nome_depto, p.nome nome_prof
+	from departamento d left outer join professor p on d.id_prof_responsavel = p.id;
+
+--right
+select d.nome as nome_depto, p.nome nome_prof
+	from departamento d right outer join professor p on d.id_prof_responsavel = p.id;
+
+--full
+select d.nome as nome_depto, p.nome nome_prof
+	from departamento d full outer join professor p on d.id_prof_responsavel = p.id;
+
