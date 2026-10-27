@@ -121,5 +121,10 @@ where ano_ingresso >= 2021
 group by ano_ingresso, semestre_ingresso
 having count(*) > 2
 order by 1, 2;
-	
+
+select aluno.nome as nome_aluno, curso.nome as nome_curso
+	from aluno inner join curso on aluno.id_curso = curso.id;
+
+select d.nome as nome_depto , p.nome nome_prof
+	from departamento d inner join professor p on d.id_prof_responsavel = p.id;
 
